@@ -7,7 +7,6 @@ class LoginForms(forms.Form):
         max_length=100,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome de usuario'})
         )
-    
     password = forms.CharField(
         label='Senha', 
         required=True, 
@@ -15,3 +14,28 @@ class LoginForms(forms.Form):
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha'})
         )
     
+class CadastroForms(forms.Form):
+    nome_cadastro = forms.CharField(
+        label='Nome de cadastro', 
+        required=True, 
+        max_length=100,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome de cadastro'})
+        )
+    email = forms.EmailField(
+        label='Email', 
+        required=True, 
+        max_length=100,
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'email@email.com'})
+        )
+    password1 = forms.CharField(
+        label='Senha', 
+        required=True, 
+        max_length=70, 
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'})
+        )
+    password2 = forms.CharField(
+        label='Senha', 
+        required=True, 
+        max_length=70, 
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha novamente'})
+        )
