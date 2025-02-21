@@ -15,7 +15,7 @@ class LoginForms(forms.Form):
         )
     
 class CadastroForms(forms.Form):
-    nome_cadastro = forms.CharField(
+    signup_name = forms.CharField(
         label='Nome de cadastro', 
         required=True, 
         max_length=100,
@@ -27,13 +27,13 @@ class CadastroForms(forms.Form):
         max_length=100,
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'email@email.com'})
         )
-    password1 = forms.CharField(
+    password_1 = forms.CharField(
         label='Senha', 
         required=True, 
         max_length=70, 
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'})
         )
-    password2 = forms.CharField(
+    password_2 = forms.CharField(
         label='Senha', 
         required=True, 
         max_length=70, 
