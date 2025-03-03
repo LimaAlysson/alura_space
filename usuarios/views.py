@@ -24,7 +24,7 @@ def login(request):
             messages.success(request, f"{name} logado com sucesso")
             return redirect('index')
         else:
-            messages.error(request, "Usuário ou senha incorretos")
+            messages.error(request, "Usuário ou senha")
             return redirect('login')
 
     return render(request, 'usuarios/login.html', {"form": form})
@@ -58,3 +58,8 @@ def cadastro(request):
             return redirect('login')
 
     return render(request, 'usuarios/cadastro.html', {"form": form})
+
+def logout(request):
+    auth.logout(request)
+    messages.success(request, "Logout efetuado com sucesso")
+    return redirect('login')
