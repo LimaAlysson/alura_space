@@ -34,7 +34,7 @@ class CadastroForms(forms.Form):
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'})
         )
     password_2 = forms.CharField(
-        label='Senha', 
+        label='Confirme sua senha', 
         required=True, 
         max_length=70, 
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha novamente'})
