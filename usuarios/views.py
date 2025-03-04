@@ -24,7 +24,7 @@ def login(request):
             messages.success(request, f"{name} logado com sucesso")
             return redirect('index')
         else:
-            messages.error(request, "Usuário ou senha")
+            messages.error(request, "Usuário ou senha incorretos!")
             return redirect('login')
 
     return render(request, 'usuarios/login.html', {"form": form})
@@ -36,6 +36,11 @@ def cadastro(request):
         form = CadastroForms(request.POST)
         
         if form.is_valid():
+
+            #antiga validação - a atual está no forms.py
+            #if form["password_1"].value() != form["password_2"].value():
+            #    messages.error(request, "Senhas não coincidem!")
+            #    return redirect('cadastro')
 
             name = form["signup_name"].value()
             email = form["email"].value()
