@@ -21,7 +21,7 @@ def login(request):
         )
         if user is not None:
             auth.login(request, user)
-            messages.success(request, f"{name} logado com sucesso")
+            messages.success(request, f"{name} logado com sucesso!")
             return redirect('index')
         else:
             messages.error(request, "Usuário ou senha incorretos!")
@@ -63,5 +63,5 @@ def cadastro(request):
 
 def logout(request):
     auth.logout(request)
-    messages.success(request, "Logout efetuado com sucesso")
+    messages.success(request, "Logout efetuado com sucesso!")
     return redirect('login')
