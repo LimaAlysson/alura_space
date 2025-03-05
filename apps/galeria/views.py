@@ -27,7 +27,7 @@ def buscar(request):
             fotografias = fotografias.filter(nome__icontains=nome_a_buscar)
             #nome__icontains verifica se dentro da variável existe aquela outra variavel
 
-    return render(request, 'galeria/buscar.html', {"cards": fotografias})
+    return render(request, 'galeria/index.html', {"cards": fotografias})
 
 def nova_imagem(request):
     if not request.user.is_authenticated:
@@ -64,3 +64,12 @@ def deletar_imagem(request, foto_id):
     messages.success(request, 'Exclusão realizada com sucesso!')
 
     return redirect('index')
+
+def filtro(request, categoria):
+
+    fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True, categoria=categoria)
+
+    if not fotografias:
+        messages.error(request, 'Não existem fotografias com este filtro!')
+
+    return render(request, 'galeria/index.html', {'cards': fotografias})
