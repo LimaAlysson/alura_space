@@ -6,7 +6,13 @@ from apps.galeria.models import Fotografia
 class FotografiaForms(forms.ModelForm):
     class Meta:
         model = Fotografia
-        exclude = ['publicada'] #campos que não é necessario no form
+        exclude = ['publicada'] #campos que não são necessarios no form
+        labels = {
+            'descricao':'Descrição',
+            'data_fotografia':'Data de registro',
+            'usuario': 'Usuário',
+            'foto': 'Arquivo'
+        }
 
         widgets = {
             'nome': forms.TextInput(attrs={'class':'form-control'}),
