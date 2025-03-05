@@ -493,6 +493,12 @@ table {
     border-color: #dc3545;
 }
 
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
 .form-control {
     display: block;
     width: 100%;
